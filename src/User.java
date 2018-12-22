@@ -1,6 +1,6 @@
 public class User {
-    private static String FirstName , SecondName , Email , password;
-    private static int Age , PhoneNumber;
+    private static String FirstName , SecondName , Email , password , PhoneNumber;
+    private static int Age;
 
     public static void setFirstName(String x){
         FirstName = x;
@@ -22,7 +22,7 @@ public class User {
         User.password = password;
     }
 
-    public static void setPhoneNumber(int phoneNumber) {
+    public static void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
     }
 
@@ -45,7 +45,7 @@ public class User {
         return Age;
     }
 
-    public static int getPhoneNumber() {
+    public static String getPhoneNumber() {
         return PhoneNumber;
     }
 }
