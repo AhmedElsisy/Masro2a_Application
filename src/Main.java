@@ -1,31 +1,67 @@
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        User_DAO user_dao = new User_DAO() ;
+        User_ServiceClass user_serviceClass = new User_ServiceClass();
+        Item_DAO item_dao = new Item_DAO() ;
+        Item_ServiceClass item_serviceClasser = new Item_ServiceClass();
+        Scanner in = new Scanner(System.in);
 
-        //      This for Testing only
-        User_DAO dao = new User_DAO();
-        User_ServiceClass serviceClass = new User_ServiceClass();
+        while (true){
+            System.out.println("1 for Sign in , 2 for Sign up");
+            int choice;
+            System.out.print("Choice :");
+            choice = in.nextInt();
+            System.out.println();
+            if (choice == 1){
+                //clearScreen();
+                System.out.println("Sign in");
+                System.out.println();
+                System.out.print("Email :");
+                String tempo = in .nextLine();
+                String E = in.nextLine();
+                System.out.println();
+                System.out.print("Password :");
+                String P = in.nextLine();
+                //User user = new User();
+                System.out.println(E + " "+ P);
+                user_serviceClass.user.setEmail(E);
+                user_serviceClass.user.setPassword(P);
+                for(User x : User_DAO.users) {
+                    System.out.println("KOL MARA " + x.getEmail() + " " + x.getPassword());
+                }
+                System.out.println(user_serviceClass.user.getEmail()+user_serviceClass.user.getPassword());
 
-        User x = new User();
-        x.setEmail("ahmedelsisy44@gmail.com");
-        x.setPassword("123456");
-        x.setFirstName("sisyyyyyy");
+                boolean LOGIN = user_serviceClass.SignIn();
+                if (!LOGIN){
+                    System.out.println("Sorry, User not found");
+                    int timer = 100;
+                    int j = 0;
+                    while (j<timer){
+                        j++;
+                    }
+                    //clearScreen();
+                }
 
-        dao.insertUser(x);
+            }
+            else if (choice == 2){
 
-        User mine = new User();
-        mine.setEmail("ahmedelsisy44@gmail.com");
-        mine.setPassword("123456");
-        serviceClass.user = mine;
-        if(serviceClass.SignIn()){
-            System.out.println("Welcome " + mine.getFirstName());
+
+                user_serviceClass.SignUp();
+
+                System.out.println();
+
+
+
+
+            }
+
+
+
+
         }
-        else System.out.println("ERROR");
-
-        dao.updateUser(mine);
-
-
     }
 }

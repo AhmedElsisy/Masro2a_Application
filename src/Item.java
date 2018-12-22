@@ -1,63 +1,65 @@
 import java.util.Vector;
 
 public class Item {
-    private static String Name , Info , Serial , UploaderEmail;
-    private static int ID , image[][];
-    private static boolean hasID;
+    private  String Name , Info , Serial , UploaderEmail, Category;
+    private  int ID ;
+    private  boolean hasID;
 
-    public static void setName(String name) {
+    public  String getCat(){
+        return Category;
+    }
+    public  void SetCat(String x){
+        Category = x;
+    }
+    public  void setName(String name) {
         Name = name;
     }
 
-    public static void setInfo(String info) {
+    public  void setInfo(String info) {
         Info = info;
     }
 
-    public static void setSerial(String serial) {
+    public  void setSerial(String serial) {
         Serial = serial;
     }
 
-    public static void setUploaderEmail(String uploaderEmail) {
-        UploaderEmail = uploaderEmail;
+    public  void setUploaderEmail(String uploaderEmailx) {
+        UploaderEmail = uploaderEmailx;
     }
 
-    public static void setID(int ID) {
-        Item.ID = ID;
+    public  void setID(int IDx) {
+        ID = ID;
     }
 
-    public static void setImage(int[][] image) {
-        Item.image = image;
+
+
+    public  void setHasID(boolean hasIDx) {
+        hasID = hasID;
     }
 
-    public static void setHasID(boolean hasID) {
-        Item.hasID = hasID;
-    }
-
-    public static String getName() {
+    public  String getName() {
         return Name;
     }
 
-    public static String getInfo() {
+    public  String getInfo() {
         return Info;
     }
 
-    public static String getSerial() {
+    public  String getSerial() {
         return Serial;
     }
 
-    public static String getUploaderEmail() {
+    public  String getUploaderEmail() {
         return UploaderEmail;
     }
 
-    public static int getID() {
+    public  int getID() {
         return ID;
     }
 
-    public static int[][] getImage() {
-        return image;
-    }
 
-    public static boolean getHasID() {
+
+    public  boolean getHasID() {
         return hasID;
     }
 }
