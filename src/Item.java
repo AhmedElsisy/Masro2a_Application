@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 public class Item {
     private static String Name , Info , Serial , UploaderEmail;
     private static int ID , image[][];

@@ -1,3 +1,4 @@
+/*
 import org.omg.CORBA.ARG_IN;
 
 import java.util.ArrayList;
@@ -5,6 +6,7 @@ import java.util.ArrayList;
 public class Item_DAO {
     private static String serial;
     private static boolean HasSerial;
+    private static ArrayList<Item> a;
 
     public static void insertItem(Item item){
 
@@ -38,3 +40,4 @@ public class Item_DAO {
         return serial; // to be changed
     }
 }
+*/

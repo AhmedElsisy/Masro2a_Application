@@ -1,3 +1,4 @@
+/*
 public class Item_ServiceClass {
     private static Item item;
 
@@ -17,3 +18,4 @@ public class Item_ServiceClass {
 
     }
 }
+*/
