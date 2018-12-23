@@ -16,7 +16,7 @@ public class Item_DAO {
 
     }
 
-    public static void deleteItem(Item item){
+    public static boolean deleteItem(Item item){
 
 
     	int F = item.getID();
@@ -29,9 +29,10 @@ public class Item_DAO {
        		 ok = true;
        		 break;
        	 }
+
        	 
         }
-    	
+        return ok;
     	
     }
 

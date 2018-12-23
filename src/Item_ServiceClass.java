@@ -64,19 +64,19 @@ public class Item_ServiceClass {
     }
 
     public static void SelectingItem(){  // to be modified
-    	Scanner scan = new Scanner();
+    	//Scanner scan = new Scanner();
      //   System.out.println("Enter the item  Keyword : ");
         String temp =Main.in.nextLine();
        // temp = Main.in.nextLine();
         Vector<Item> v = Item_DAO.FindALL();
         for (Item t:v){
-            System.out.println(t.getName() + " " t.getID());
+            System.out.println(t.getName() + " "+ t.getID());
         }
         System.out.println("select item (Enter such an item's  id ) : ");
         int id = Main.in.nextInt();
         
         for (Item t:v){
-        	if(t.gerID() ==  id) {
+        	if(t.getID() ==  id) {
         		while(true) {
         		int cnt = 0;
         		int choice ;
@@ -133,7 +133,7 @@ public class Item_ServiceClass {
     }
 
     public static void MarkingItem(){  // to be modified
-    	Scanner scan = new Scanner();
+    	//Scanner scan = new Scanner();
     	while(true) {
     	       System.out.print("Enter(1) to continue  : ");
     	       System.out.print("Enter(2) to terminate   : ");
@@ -143,12 +143,12 @@ if(choice == 1) {
        System.out.print("Enter the Item Id : ");
        int id =Main.in.nextInt();
        Vector<Item> v = Item_DAO.FindALL();
-       item.
+
        
        for(Item it : v) {
     	 if(  it.getID() == id) {
-    		 Item_DAO dao;
-    		 if(dao.deleteItem(it)) {
+    		 //Item_DAO dao;
+    		 if(Item_DAO.deleteItem(it)) {
     		       System.out.println("Item is Marked as found. ");
     		 }
     		 else {
