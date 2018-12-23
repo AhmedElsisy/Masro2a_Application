@@ -3,15 +3,16 @@
 import java.util.*;
 
 public class Item_DAO {
+    public static int curr = 0;
     private static String serial;
     private static boolean HasSerial;
     private static ArrayList<Item> a;
-    public static Vector <Item> VecOfItem= new Vector<Item>();
+    public static Vector <Item> items= new Vector<Item>();
     public static void insertItem(Item item){
-    	 VecOfItem.add(item);
+        items.add(item);
     }
 
-    public static void updateItem(Item item){
+    public static void updateItem(Item item){  // to be modified
 
     }
 
@@ -21,10 +22,10 @@ public class Item_DAO {
     	int F = item.getID();
         Item tmp;
         boolean ok = false;
-        for(int i= 0 ; i<VecOfItem.size();++i) {
-       	 tmp = VecOfItem.elementAt(i);
+        for(int i= 0 ; i<items.size();++i) {
+       	 tmp = items.elementAt(i);
        	 if(tmp.getID() == F) {
-       		 VecOfItem.remove(i);
+             items.remove(i);
        		 ok = true;
        		 break;
        	 }
@@ -34,25 +35,47 @@ public class Item_DAO {
     	
     }
 
-    /*public static ArrayList<Item> FindALL(){
-
+    public static Vector<Item> FindALL(){   // to be modified
+        Vector<Item> v = new Vector<Item>();
+        return  v;
     }
 
-    public static ArrayList<Item> FindAllByCat(String x){
-
+    public static Vector<Item> FindAllByCat(String x){   // to be modified
+        Vector<Item> v = new Vector<Item>();
+        return  v;
     }
 
-    public static ArrayList<Item> FindAllByInfo(String x){
 
-    }
 
-    public static ArrayList<Item> FindAllByName(String x){
+    public static Vector<Item> FindAllByName(String x){
+        String [] kk = x.split(" ");
+        Vector<Item> virjil = new Vector<Item>();
+        for (int i = 0 ; i < kk.length;++i) {
+            for (Item t : items) {
+                String []gg = t.getName().split(" ");
+                String[]ggg = t.getInfo().split(" ");
+                for (int j = 0 ; j < gg.length;++j) {
+                    if (gg[j].equals(kk[i])  && !virjil.contains(t)) {
+                        virjil.add(t);
+                        break;
+                    }
+                }
+                for (int j = 0 ; j < ggg.length;++j) {
+                    if (ggg[j].equals( kk[i]) && !virjil.contains(t)) {
+                        virjil.add(t);
+                        break;
+                    }
+                }
+            }
+        }
 
+
+        return  virjil;
     }
 
     public static String FindSerial(String x){
-        return serial; // to be changed
+        return serial; // to be modified
     }
-    */
+
 }
 

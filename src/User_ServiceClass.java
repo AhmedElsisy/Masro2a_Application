@@ -16,9 +16,7 @@ public class User_ServiceClass {
 
         for(User x : User_DAO.users){
 
-            if(x.getEmail() == user.getEmail() && x.getPassword() == user.getPassword() ){
-                System.out.println("there " + x.getEmail() + " " + x.getPassword());
-                System.out.println("here " + user.getEmail() + " " + user.getPassword());
+            if(x.getEmail() .equals(user.getEmail() ) && x.getPassword().equals(user.getPassword()) ){
 
                 user.setFirstName(x.getFirstName());
                 user.setSecondName(x.getSecondName());

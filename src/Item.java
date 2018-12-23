@@ -28,7 +28,7 @@ public class Item {
     }
 
     public  void setID(int IDx) {
-        ID = ID;
+        ID = IDx;
     }
 
 
