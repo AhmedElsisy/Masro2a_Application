@@ -1,4 +1,5 @@
 import java.time.chrono.MinguoChronology;
+import java.util.Scanner;
 import java.util.Vector;
 
 public class Item_ServiceClass {
@@ -63,8 +64,55 @@ public class Item_ServiceClass {
     }
 
     public static void SelectingItem(){  // to be modified
+    	Scanner scan = new Scanner();
+     //   System.out.println("Enter the item  Keyword : ");
+        String temp =Main.in.nextLine();
+       // temp = Main.in.nextLine();
+        Vector<Item> v = Item_DAO.FindALL();
+        for (Item t:v){
+            System.out.println(t.getName() + " " t.getID());
+        }
+        System.out.println("select item (Enter such an item's  id ) : ");
+        int id = Main.in.nextInt();
+        
+        for (Item t:v){
+        	if(t.gerID() ==  id) {
+        		while(true) {
+        		int cnt = 0;
+        		int choice ;
+        		if(cnt > 10) {
+            		System.out.println("number of trials exceeded  :  ");
+            		System.out.println("may be not the item your looking for   ");
+            		break;
+        		}
+        		System.out.println("Enter(1) to calim the item");
+        		System.out.println("Enter(2) to exsit");
+                choice = Main.in.nextInt();
+                if(choice == 2)break;
+                if(choice ==  1) {
+            		System.out.println("Respond the question to verify ");
+            		System.out.println("what is the item's serial :  ");
+            		String ans  = Main.in.nextLine();
+            		
+            		if(ans == t.getSerial()) {
+            			System.out.println( t.getUploaderEmail());
+            			System.out.println(t.getInfo() );
+            		}
+            		else {
+            			System.out.println("WRONG ANSWER");
+            			cnt++;
+            		}
 
-    }
+
+                }
+        	}
+        		
+        }
+     }
+       
+          	
+    	
+ }
 
     public static void Search(){
         System.out.println("Enter keyword: ");
@@ -85,7 +133,46 @@ public class Item_ServiceClass {
     }
 
     public static void MarkingItem(){  // to be modified
+    	Scanner scan = new Scanner();
+    	while(true) {
+    	       System.out.print("Enter(1) to continue  : ");
+    	       System.out.print("Enter(2) to terminate   : ");
+        	   int choice  =Main.in.nextInt();
+if(choice == 2)   break;     	   
+if(choice == 1) {
+       System.out.print("Enter the Item Id : ");
+       int id =Main.in.nextInt();
+       Vector<Item> v = Item_DAO.FindALL();
+       item.
+       
+       for(Item it : v) {
+    	 if(  it.getID() == id) {
+    		 Item_DAO dao;
+    		 if(dao.deleteItem(it)) {
+    		       System.out.println("Item is Marked as found. ");
+    		 }
+    		 else {
+  		       System.out.println("There's no such item. ");
+  		       
 
+    		 }
+    		 return;
+    		 
+    	 }
+    	 
+       }
+	       System.out.println("There's no such item exsit. ");
+}
+
+
+	       
     }
+       
+	       
+	       
+    }
+    
+    
+    
 }
 
