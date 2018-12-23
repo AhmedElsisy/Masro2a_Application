@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class User_ServiceClass {
-    public static User user;
+
+    public static User user = new User();
 
     public static boolean isGoodInteger(String s){
         for(int i = 0 ; i < s.length() ; ++i){
@@ -12,10 +13,17 @@ public class User_ServiceClass {
     }
 
     public static boolean SignIn(){
-        User_DAO dao = new User_DAO();
-        for(User x : dao.users){
-            if(x.getEmail() == user.getEmail() && x.getPassword() == user.getPassword()){
-                user = x;
+
+        for(User x : User_DAO.users){
+
+            if(x.getEmail() .equals(user.getEmail() ) && x.getPassword().equals(user.getPassword()) ){
+
+                user.setFirstName(x.getFirstName());
+                user.setSecondName(x.getSecondName());
+                user.setPhoneNumber(x.getPhoneNumber());
+                user.setAge(x.getAge());
+
+
                 return true;
             }
         }

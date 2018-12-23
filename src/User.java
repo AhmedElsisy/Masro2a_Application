@@ -1,51 +1,71 @@
-public class User {
-    private static String FirstName , SecondName , Email , password , PhoneNumber;
-    private static int Age;
+import java.net.PasswordAuthentication;
 
-    public static void setFirstName(String x){
+public class User {
+    private  String FirstName , SecondName , Email , password , PhoneNumber;
+    private  int Age ;
+
+    User(){
+        FirstName = new String();
+        SecondName = new String();
+        Email = new String();
+        password = new String();
+        PhoneNumber = new String();
+        Age = 0;
+
+    }
+    User(User d){
+        FirstName = d.getFirstName();
+        SecondName = d.getSecondName();
+        Email = d.getEmail();
+        password = d.getPassword();
+        PhoneNumber = d.getPhoneNumber();
+        Age = d.getAge();
+    }
+
+    public  void setFirstName(String x){
         FirstName = x;
     }
 
-    public static void setSecondName(String x){
+    public  void setSecondName(String x){
         SecondName = x;
     }
 
-    public static void setEmail(String email) {
+    public  void setEmail(String email) {
         Email = email;
     }
 
-    public static void setAge(int age) {
+    public  void setAge(int age) {
         Age = age;
     }
 
-    public static void setPassword(String password) {
-        User.password = password;
+    public  void setPassword(String passwordx) {
+        password = passwordx;
     }
 
-    public static void setPhoneNumber(String phoneNumber) {
+    public  void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
     }
 
-    public static String getFirstName(){
+    public  String getFirstName(){
         return FirstName;
     }
 
-    public static String getSecondName() {
+    public  String getSecondName() {
         return SecondName;
     }
 
-    public static String getEmail() {
+    public  String getEmail() {
         return Email;
     }
 
-    public static String getPassword() {
+    public  String getPassword() {
         return password;
     }
-    public static int getAge() {
+    public  int getAge() {
         return Age;
     }
 
-    public static String getPhoneNumber() {
+    public  String getPhoneNumber() {
         return PhoneNumber;
     }
 }
